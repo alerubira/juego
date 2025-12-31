@@ -96,3 +96,10 @@ c:\Users\arubi\OneDrive\Escritorio\juego\obj\Debug\net9.0\staticwebassets.pack.j
 c:\Users\arubi\OneDrive\Escritorio\juego\obj\Debug\net9.0\refint\juego.dll
 c:\Users\arubi\OneDrive\Escritorio\juego\obj\Debug\net9.0\juego.genruntimeconfig.cache
 c:\Users\arubi\OneDrive\Escritorio\juego\obj\Debug\net9.0\ref\juego.dll
+C:\Users\arubi\OneDrive\Escritorio\juego\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\arubi\OneDrive\Escritorio\juego\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\arubi\OneDrive\Escritorio\juego\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\arubi\OneDrive\Escritorio\juego\bin\Debug\net9.0\MySqlConnector.dll
+C:\Users\arubi\OneDrive\Escritorio\juego\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\arubi\OneDrive\Escritorio\juego\obj\Debug\net9.0\juego.csproj.AssemblyReference.cache
+C:\Users\arubi\OneDrive\Escritorio\juego\obj\Debug\net9.0\juego.csproj.Up2Date

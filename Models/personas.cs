@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace juego.Models
+namespace Juego.Models
 {
 	public class Personas
 	{

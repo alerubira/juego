@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace juego.Models
+namespace Juego.Models
 {
 	public class Roles
 	{
