@@ -73,7 +73,9 @@ namespace Juego.Controllers
                     ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30)
                 }
             );
-
+            if(persona.IdRol != 1){
+                 return View("~/Views/Principal/Index.cshtml");
+            }
             return RedirectToAction("Index", "Home");
         }
     }
