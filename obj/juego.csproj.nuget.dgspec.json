@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj": {}
+    "c:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj": {
+    "c:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj",
+        "projectUniqueName": "c:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj",
         "projectName": "juego",
-        "projectPath": "C:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj",
+        "projectPath": "c:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj",
         "packagesPath": "C:\\Users\\arubi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\obj\\",
+        "outputPath": "c:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arubi\\AppData\\Roaming\\NuGet\\NuGet.Config"

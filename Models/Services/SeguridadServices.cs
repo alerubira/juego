@@ -28,7 +28,8 @@ namespace Juego.Services
 
         public bool VerificarContraseña(string contraseñaIngresada, string hashGuardado)
         {
-            return HashearContraseña(contraseñaIngresada) == hashGuardado;
+            var hash=HashearContraseña(contraseñaIngresada);
+            return hash == hashGuardado;
         }
     }
 }
