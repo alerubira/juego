@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6PlSY48wxpk=",
+  "dgSpecHash": "yOG80jSMd3o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj",
+  "projectFilePath": "c:\\Users\\arubi\\OneDrive\\Escritorio\\juego\\juego.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arubi\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0\\microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
     "C:\\Users\\arubi\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0\\microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",

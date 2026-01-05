@@ -4,23 +4,27 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Juego.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Juego.Controllers
 {
     public class RolesController : Controller
     {
-        private readonly SeguridadService _seguridadService;
+          private readonly DataContext _context;
 
-        public RolesController(SeguridadService seguridadService)
+        public RolesController(DataContext context)
         {
-            _seguridadService = seguridadService;
+            _context = context;
         }
 
         [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Index()
+        [Authorize(Roles = "2")]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var roles = await _context.Roles.ToListAsync();
+            return View(roles);
         }
     }
 }

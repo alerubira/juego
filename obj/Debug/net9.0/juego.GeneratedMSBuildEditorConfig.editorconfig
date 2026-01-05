@@ -9,57 +9,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = juego
 build_property.RootNamespace = juego
-build_property.ProjectDir = C:\Users\arubi\OneDrive\Escritorio\juego\
+build_property.ProjectDir = c:\Users\arubi\OneDrive\Escritorio\juego\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\arubi\OneDrive\Escritorio\juego
+build_property.MSBuildProjectDirectory = c:\Users\arubi\OneDrive\Escritorio\juego
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Home/Index.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Home/Privacy.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Login/Index.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Personas/Index.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Personas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Principal/Index.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Principal/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpbmNpcGFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Roles/Index.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Roles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Shared/Error.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/_ViewImports.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/_ViewStart.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/arubi/OneDrive/Escritorio/juego/Views/Shared/_Layout.cshtml]
+[c:/Users/arubi/OneDrive/Escritorio/juego/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5l8zgmxxt8
