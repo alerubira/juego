@@ -12,5 +12,7 @@ namespace Juego.Models
 
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Personas> Personas { get; set; }
+        public DbSet<Preguntas> Preguntas { get; set; }
+        public DbSet<Respuestas> Respuestas { get; set; }
     }
 }
