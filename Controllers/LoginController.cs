@@ -74,7 +74,7 @@ namespace Juego.Controllers
                 }
             );
             if(persona.IdRol != 1){
-                 return View("~/Views/Principal/Index.cshtml");
+                 return RedirectToAction("Index", "Principal");
             }
             return RedirectToAction("Index", "Home");
         }

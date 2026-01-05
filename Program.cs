@@ -41,15 +41,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     });
 
-/// 🔹 Autorización por Claims
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminOnly", policy =>
-        policy.RequireClaim(ClaimTypes.Role, "Admin"));
 
-    options.AddPolicy("Usuario", policy =>
-        policy.RequireClaim("TipoUsuario", "Usuario"));
-});
 
 var app = builder.Build();
 
