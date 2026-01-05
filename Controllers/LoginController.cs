@@ -76,6 +76,9 @@ namespace Juego.Controllers
             if(persona.IdRol != 1){
                  return RedirectToAction("Index", "Principal");
             }
+            if(persona.IdRol == 1){
+                return RedirectToAction("Index", "Jugar");
+            }
             return RedirectToAction("Index", "Home");
         }
     }

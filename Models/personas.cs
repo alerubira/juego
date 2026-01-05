@@ -11,7 +11,7 @@ namespace Juego.Models
 		[Display(Name = "Código Int.")]
 		public int IdPersona { get; set; }
         [Required(ErrorMessage = "El DNI es obligatorio")]
-		[StringLength(10, ErrorMessage = "El DNI no puede superar los 10 caracteres")]
+		[Range(1, 999999999, ErrorMessage = "DNI inválido")]
 		public required int Dni { get; set; } 
 		[Required(ErrorMessage = "El apellido es obligatorio")]
 		[StringLength(30, ErrorMessage = "El apellido no puede superar los 30 caracteres")]
