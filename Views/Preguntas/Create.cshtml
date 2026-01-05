@@ -1,0 +1,96 @@
+@model Juego.Models.PreguntaJuegoModel
+
+@{
+    ViewData["Title"] = "Crear Pregunta";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Crear Pregunta</h4>
+                </div>
+
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+
+                        <!-- ENUNCIADO -->
+                        <div class="mb-3">
+                            <label asp-for="Enunciado" class="form-label"></label>
+                            <textarea asp-for="Enunciado"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Escriba la pregunta..."></textarea>
+                            <span asp-validation-for="Enunciado" class="text-danger"></span>
+                        </div>
+
+                        <!-- TIEMPO -->
+                        <div class="mb-3">
+                            <label asp-for="TiempoSegundos" class="form-label">
+                                Tiempo (segundos)
+                            </label>
+                            <input asp-for="TiempoSegundos"
+                                   type="number"
+                                   min="5"
+                                   max="300"
+                                   class="form-control" />
+                            <span asp-validation-for="TiempoSegundos" class="text-danger"></span>
+                        </div>
+
+                        <hr />
+
+                        <h5 class="text-success">Respuesta Correcta</h5>
+
+                        <div class="mb-3">
+                            <input asp-for="RespuestaCorrecta"
+                                   class="form-control border-success"
+                                   placeholder="Respuesta correcta" />
+                            <span asp-validation-for="RespuestaCorrecta" class="text-danger"></span>
+                        </div>
+
+                        <hr />
+
+                        <h5 class="text-danger">Respuestas Incorrectas</h5>
+
+                        <div class="mb-3">
+                            <input asp-for="RespuestaIncorrecta1"
+                                   class="form-control"
+                                   placeholder="Respuesta incorrecta 1" />
+                            <span asp-validation-for="RespuestaIncorrecta1" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <input asp-for="RespuestaIncorrecta2"
+                                   class="form-control"
+                                   placeholder="Respuesta incorrecta 2" />
+                            <span asp-validation-for="RespuestaIncorrecta2" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <input asp-for="RespuestaIncorrecta3"
+                                   class="form-control"
+                                   placeholder="Respuesta incorrecta 3" />
+                            <span asp-validation-for="RespuestaIncorrecta3" class="text-danger"></span>
+                        </div>
+
+                        <!-- BOTONES -->
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a asp-action="Index" class="btn btn-secondary">
+                                Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                Guardar Pregunta
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
