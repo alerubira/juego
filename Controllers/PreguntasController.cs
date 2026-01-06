@@ -34,6 +34,73 @@ namespace Juego.Controllers
         {
             return View();
         }
+         [HttpPost]
+         [Authorize(Roles = "2,3")]
+         [ValidateAntiForgeryToken]
+        public  IActionResult Create(PreguntaJuegoModel model)
+        {
+             if (!ModelState.IsValid)
+                return View(model);
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+
+            try
+            {
+                // 1️⃣ Crear pregunta
+                var pregunta = new Preguntas
+                {
+                    Enunciado = model.Enunciado,
+                    TiempoSegundos = model.TiempoSegundos
+                };
+
+                _context.Preguntas.Add(pregunta);
+                await _context.SaveChangesAsync();
+
+                // 2️⃣ Crear respuestas
+                var respuestas = new List<Respuestas>
+                {
+                    new Respuestas
+                    {
+                        Enunciado = model.RespuestaCorrecta,
+                        EsCorrecta = true,
+                        IdPregunta = pregunta.IdPregunta
+                    },
+                    new Respuestas
+                    {
+                        Enunciado = model.RespuestaIncorrecta1,
+                        EsCorrecta = false,
+                        IdPregunta = pregunta.IdPregunta
+                    },
+                    new Respuestas
+                    {
+                        Enunciado = model.RespuestaIncorrecta2,
+                        EsCorrecta = false,
+                        IdPregunta = pregunta.IdPregunta
+                    },
+                    new Respuestas
+                    {
+                        Enunciado = model.RespuestaIncorrecta3,
+                        EsCorrecta = false,
+                        IdPregunta = pregunta.IdPregunta
+                    }
+                };
+
+                _context.Respuestas.AddRange(respuestas);
+                await _context.SaveChangesAsync();
+
+                // 3️⃣ Confirmar transacción
+                await transaction.CommitAsync();
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                ModelState.AddModelError("", "Error al crear la pregunta");
+                return View(model);
+            }
+
+        }
        
 }
 }

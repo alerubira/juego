@@ -15,7 +15,7 @@ namespace Juego.Models
     public required string Enunciado { get; set; }
 
     public bool EsCorrecta { get; set; }
-
+    [ForeignKey("Preguntas")]
     public int IdPregunta { get; set; }
 
     public Preguntas? Pregunta { get; set; }
