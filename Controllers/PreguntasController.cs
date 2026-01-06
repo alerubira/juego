@@ -37,7 +37,7 @@ namespace Juego.Controllers
          [HttpPost]
          [Authorize(Roles = "2,3")]
          [ValidateAntiForgeryToken]
-        public  IActionResult Create(PreguntaJuegoModel model)
+        public  async Task<IActionResult>  Create(PreguntaJuegoModel model)
         {
              if (!ModelState.IsValid)
                 return View(model);
