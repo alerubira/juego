@@ -1,11 +1,45 @@
+@model IEnumerable<Juego.Models.Preguntas>
 @{
     ViewData["Title"] = "Preguntas";
 }
 
-<h2>Preguntas</h2>
+<h2>Preguntas
 <div class="d-flex justify-content-between align-items-center mb-3">
     
     <a class="btn btn-primary" asp-action="Create" title="Crear">
         Crear Pregunta <i class="fa-solid fa-plus"></i>
     </a>
 </div>
+</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.IdPregunta)</th>
+            <th>@Html.DisplayNameFor(model => model.Enunciado)</th>
+            <th>Seleccionar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdPregunta</td>
+                <td>@item.Enunciado</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-primary"
+                           asp-action="Select"
+                           asp-route-id="@item.IdPregunta"
+                           title="Seleccionar">
+                            <i class="fa-solid fa-check"></i>
+                        </a>
+
+                      
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

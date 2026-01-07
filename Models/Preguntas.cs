@@ -16,6 +16,7 @@ namespace Juego.Models
     // ⏱️ Tiempo límite en segundos (ej: 50)
     public int TiempoSegundos { get; set; }
 
-    public ICollection<Respuestas>? Respuestas { get; set; }
+    public ICollection<Respuestas> Respuestas { get; set; }
+        = new List<Respuestas>(); // 🔴 CLAVE
 }
 }

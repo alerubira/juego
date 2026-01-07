@@ -101,6 +101,39 @@ namespace Juego.Controllers
             }
 
         }
+        [HttpGet]
+        [Authorize(Roles = "2,3")]
+        public async Task<IActionResult> Select(int id)
+        {
+            var pregunta = await _context.Preguntas
+                .Include(p => p.Respuestas)
+                .FirstOrDefaultAsync(p => p.IdPregunta == id);
+
+            if (pregunta == null)
+                return NotFound();
+
+            var model = new PreguntaJuegoModel
+            {
+                IdPregunta = pregunta.IdPregunta,
+                Enunciado = pregunta.Enunciado,
+                TiempoSegundos = pregunta.TiempoSegundos,
+
+                // Mapear respuestas
+                Respuestas = pregunta.Respuestas
+                    .Select(r => new RespuestaJuegoModel
+                    {
+                        IdRespuesta = r.IdRespuesta,
+                        Enunciado = r.Enunciado,
+                        EsCorrecta = r.EsCorrecta,
+                        IdPregunta = r.IdPregunta
+                    })
+                    .ToList()
+            };
+
+            // 🔁 Reutilizar la vista Create
+            return View("Create", model);
+        }
+
        
 }
 }

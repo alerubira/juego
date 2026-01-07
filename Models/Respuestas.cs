@@ -8,14 +8,14 @@ namespace Juego.Models
     public class Respuestas
 {
     [Key]
-    public int Id { get; set; }
+    public int IdRespuesta { get; set; }
 
     [Required]
 
     public required string Enunciado { get; set; }
 
     public bool EsCorrecta { get; set; }
-    [ForeignKey("Preguntas")]
+     [ForeignKey(nameof(Pregunta))]
     public int IdPregunta { get; set; }
 
     public Preguntas? Pregunta { get; set; }
