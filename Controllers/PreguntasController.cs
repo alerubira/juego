@@ -150,6 +150,62 @@ namespace Juego.Controllers
 
             return RedirectToAction("Index");
         }
+        [HttpGet]
+            [Authorize(Roles = "2,3")]
+            public IActionResult Edit(int id)
+            {
+                var pregunta = _context.Preguntas
+                    .Include(p => p.Respuestas)
+                    .FirstOrDefault(p => p.IdPregunta == id);
+
+                if (pregunta == null)
+                    return NotFound();
+
+                var model = new PreguntaJuegoModel
+                {
+                    IdPregunta = pregunta.IdPregunta,
+                    Enunciado = pregunta.Enunciado,
+                    Respuestas = pregunta.Respuestas.Select(r => new RespuestaJuegoModel
+                    {
+                        IdRespuesta = r.IdRespuesta,
+                        Enunciado = r.Enunciado,
+                        EsCorrecta = r.EsCorrecta
+                    }).ToList()
+                };
+
+                return View("Create", model);
+            }
+
+        [HttpPost]
+        [Authorize(Roles = "2,3")]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(PreguntaJuegoModel model)
+        {
+            if (!ModelState.IsValid)
+                return View("Create", model);
+
+            var pregunta = _context.Preguntas
+                .Include(p => p.Respuestas)
+                .FirstOrDefault(p => p.IdPregunta == model.IdPregunta);
+
+            if (pregunta == null)
+                return NotFound();
+
+            pregunta.Enunciado = model.Enunciado;
+
+            foreach (var respuesta in pregunta.Respuestas)
+            {
+                var vm = model.Respuestas
+                    .First(r => r.IdRespuesta == respuesta.IdRespuesta);
+
+                respuesta.Enunciado = vm.Enunciado;
+                respuesta.EsCorrecta = vm.EsCorrecta;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
 
        
