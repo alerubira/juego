@@ -133,6 +133,24 @@ namespace Juego.Controllers
             // 🔁 Reutilizar la vista Create
             return View("Create", model);
         }
+        [HttpPost]
+        [Authorize(Roles = "2,3")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var pregunta = await _context.Preguntas
+                .Include(p => p.Respuestas)
+                .FirstOrDefaultAsync(p => p.IdPregunta == id);
+
+            if (pregunta == null)
+                return NotFound();
+
+            _context.Preguntas.Remove(pregunta);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
 
        
 }
