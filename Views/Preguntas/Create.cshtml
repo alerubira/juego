@@ -1,4 +1,8 @@
 @model Juego.Models.PreguntaJuegoModel
+@{
+    int idPregunta = Model?.IdPregunta ?? 0;
+    bool esEdicion = idPregunta > 0;
+}
 
 @{
     ViewData["Title"] = "Crear Pregunta";
@@ -13,7 +17,8 @@
                 </div>
 
                 <div class="card-body">
-                    <form asp-action="Create" method="post">
+                    <form asp-action="@(esEdicion ? "Edit" : "Create")" method="post">
+
 
                         <!-- ENUNCIADO -->
                         <div class="mb-3">
@@ -79,6 +84,27 @@
                             <a asp-action="Index" class="btn btn-secondary">
                                 Cancelar
                             </a>
+                            @if (esEdicion)
+                                {
+                                    <a asp-action="Jugar"
+                                    asp-route-id="@idPregunta"
+                                    class="btn btn-success">
+                                        ▶️ Iniciar Pregunta
+                                    </a>
+                                }
+                                @if (esEdicion)
+                                {
+                                    <form asp-action="Delete"
+                                        asp-route-id="@idPregunta"
+                                        method="post"
+                                        style="display:inline">
+                                        <button type="submit" class="btn btn-danger">
+                                            🗑 Eliminar
+                                        </button>
+                                    </form>
+                                }
+
+
                             <button type="submit" class="btn btn-primary">
                                 Guardar Pregunta
                             </button>
