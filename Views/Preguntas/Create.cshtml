@@ -47,7 +47,7 @@
                         <hr />
                         <h5>Respuestas</h5>
 
-                            @for (int i = 0; i < Model.Respuestas.Count; i++)
+                            @for (int i = 0; i < Model!.Respuestas!.Count; i++)
                             {
                                 <input type="hidden" asp-for="Respuestas[i].IdRespuesta" />
 

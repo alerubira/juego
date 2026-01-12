@@ -27,7 +27,7 @@ namespace Juego.Models
         public string RespuestaIncorrecta3 { get; set; } = string.Empty;
 
         // Para jugar (mostrar opciones)
-        public List<RespuestaJuegoModel>? Respuestas { get; set; }
+        public List<RespuestaJuegoModel> Respuestas { get; set; } = new();
 
         // Para capturar elección del jugador
         public int? RespuestaSeleccionadaId { get; set; }
