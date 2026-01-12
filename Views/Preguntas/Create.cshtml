@@ -19,6 +19,7 @@
                 <div class="card-body">
                     <form asp-action="@(esEdicion ? "Edit" : "Create")" method="post">
 
+                        <input type="hidden" asp-for="IdPregunta" />
 
                         <!-- ENUNCIADO -->
                         <div class="mb-3">
@@ -44,6 +45,27 @@
                         </div>
 
                         <hr />
+                        <h5>Respuestas</h5>
+
+                            @for (int i = 0; i < Model.Respuestas.Count; i++)
+                            {
+                                <input type="hidden" asp-for="Respuestas[i].IdRespuesta" />
+
+                                <div class="mb-3 border rounded p-2">
+                                    <label class="form-label">Respuesta @(i + 1)</label>
+
+                                    <input asp-for="Respuestas[i].Enunciado"
+                                        class="form-control mb-1" />
+
+                                    <label class="form-check-label">
+                                        <input type="radio"
+                                            name="RespuestaCorrecta"
+                                            value="@i"
+                                            @(Model.Respuestas[i].EsCorrecta ? "checked" : "") />
+                                        Correcta
+                                    </label>
+                                </div>
+                            }
 
                         <h5 class="text-success">Respuesta Correcta</h5>
 
@@ -78,6 +100,7 @@
                                    placeholder="Respuesta incorrecta 3" />
                             <span asp-validation-for="RespuestaIncorrecta3" class="text-danger"></span>
                         </div>
+                        
 
                         <!-- BOTONES -->
                         <div class="d-flex justify-content-end gap-2 mt-4">
