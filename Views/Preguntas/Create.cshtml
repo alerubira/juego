@@ -5,7 +5,7 @@
 }
 
 @{
-    ViewData["Title"] = "Crear Pregunta";
+    ViewData["Title"] = esEdicion ? "Editar Pregunta" : "Crear Pregunta";
 }
 
 <div class="container mt-4">
@@ -45,28 +45,35 @@
                         </div>
 
                         <hr />
-                        <h5>Respuestas</h5>
+                        @if (esEdicion){
 
-                            @for (int i = 0; i < Model!.Respuestas!.Count; i++)
-                            {
-                                <input type="hidden" asp-for="Respuestas[i].IdRespuesta" />
+                        
+                            <h5>Respuestas</h5>
 
-                                <div class="mb-3 border rounded p-2">
-                                    <label class="form-label">Respuesta @(i + 1)</label>
+                                @for (int i = 0; i < Model!.Respuestas!.Count; i++)
+                                {
+                                    <input type="hidden" asp-for="Respuestas[i].IdRespuesta" />
 
-                                    <input asp-for="Respuestas[i].Enunciado"
-                                        class="form-control mb-1" />
+                                    <div class="mb-3 border rounded p-2">
+                                        <label class="form-label">Respuesta @(i + 1)</label>
 
-                                    <label class="form-check-label">
-                                        <input type="radio"
-                                            name="RespuestaCorrecta"
-                                            value="@i"
-                                            @(Model.Respuestas[i].EsCorrecta ? "checked" : "") />
-                                        Correcta
-                                    </label>
-                                </div>
-                            }
+                                        <input asp-for="Respuestas[i].Enunciado"
+                                            class="form-control mb-1" />
 
+                                        <label class="form-check-label">
+                                            <input type="radio"
+                                                name="RespuestaCorrecta"
+                                                value="@i"
+                                                @(Model.Respuestas[i].EsCorrecta ? "checked" : "") />
+                                            Correcta
+                                        </label>
+                                    </div>
+                                }
+                        }
+                        <hr />
+                      
+                           
+                        
                         <h5 class="text-success">Respuesta Correcta</h5>
 
                         <div class="mb-3">
@@ -129,7 +136,7 @@
 
 
                             <button type="submit" class="btn btn-primary">
-                                Guardar Pregunta
+                                Guardar Pregunta @(esEdicion ? "Modificada" : "Nueva")
                             </button>
                         </div>
 

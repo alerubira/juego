@@ -32,7 +32,17 @@ namespace Juego.Controllers
          [Authorize(Roles = "2,3")]
         public  IActionResult Create()
         {
-            return View();
+            var model = new PreguntaJuegoModel
+                {
+                    Respuestas = new List<RespuestaJuegoModel>
+                    {
+                        new RespuestaJuegoModel(),
+                        new RespuestaJuegoModel(),
+                        new RespuestaJuegoModel(),
+                        new RespuestaJuegoModel()
+                    }
+                };
+            return View(model);
         }
          [HttpPost]
          [Authorize(Roles = "2,3")]
@@ -192,6 +202,7 @@ namespace Juego.Controllers
                 return NotFound();
 
             pregunta.Enunciado = model.Enunciado;
+            pregunta.TiempoSegundos = model.TiempoSegundos;
 
             foreach (var respuesta in pregunta.Respuestas)
             {
